@@ -6,4 +6,4 @@
 /**
  * Type declaration for generic observers.
  */
-export type Observer<T> = (value: T) => void;
+export type Observer<T> = (value: T) => any;
