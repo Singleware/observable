@@ -76,7 +76,7 @@ let Subject = Subject_1 = class Subject {
      */
     notifyAllSync(value) {
         for (const observer of this.observers) {
-            Class.call(observer, value);
+            observer(value);
         }
         return this;
     }
@@ -87,7 +87,7 @@ let Subject = Subject_1 = class Subject {
      */
     async notifyAll(value) {
         for (const observer of this.observers) {
-            await Class.call(observer, value);
+            await observer(value);
         }
         return this;
     }
@@ -98,7 +98,7 @@ let Subject = Subject_1 = class Subject {
      */
     *notifyStep(value) {
         for (const observer of this.observers) {
-            yield Class.call(observer, value);
+            yield observer(value);
         }
         return this;
     }

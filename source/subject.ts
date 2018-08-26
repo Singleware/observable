@@ -14,7 +14,8 @@ export class Subject<T> {
   /**
    * List of observers.
    */
-  @Class.Protected() protected observers: Array<Observer<T>> = [];
+  @Class.Protected()
+  protected observers: Observer<T>[] = [];
 
   /**
    * Number of registered observers.
@@ -74,7 +75,7 @@ export class Subject<T> {
   @Class.Public()
   public notifyAllSync(value: T): Subject<T> {
     for (const observer of this.observers) {
-      Class.call(observer, value);
+      observer(value);
     }
     return this;
   }
@@ -87,7 +88,7 @@ export class Subject<T> {
   @Class.Public()
   public async notifyAll(value: T): Promise<Subject<T>> {
     for (const observer of this.observers) {
-      await Class.call(observer, value);
+      await observer(value);
     }
     return this;
   }
@@ -100,7 +101,7 @@ export class Subject<T> {
   @Class.Public()
   public *notifyStep(value: T): IterableIterator<Subject<T>> {
     for (const observer of this.observers) {
-      yield Class.call(observer, value);
+      yield observer(value);
     }
     return this;
   }

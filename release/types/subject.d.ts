@@ -6,7 +6,7 @@ export declare class Subject<T> {
     /**
      * List of observers.
      */
-    protected observers: Array<Observer<T>>;
+    protected observers: Observer<T>[];
     /**
      * Number of registered observers.
      */

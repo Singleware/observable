@@ -18,9 +18,9 @@ const tickEvents = new Observable.Subject<number>();
 tickEvents.subscribe(function observerA(count: number): void {
   if (count === 1) {
     tickEvents.unsubscribe(observerA);
-    console.log('Tick A: ', count, ' (final)');
+    console.log(`Tick A: ${count} (final)`);
   } else {
-    console.log('Tick A: ', count);
+    console.log(`Tick A: ${count}`);
   }
 });
 
@@ -28,12 +28,13 @@ tickEvents.subscribe(function observerA(count: number): void {
  * Subscribe the second observer.
  */
 tickEvents.subscribe((count: number) => {
-  console.log('Tick B: ', count);
+  console.log(`Tick B: ${count}`);
 });
 
 /**
  * Notify all observers.
  */
+console.log(`Notify all: ${tickEvents.length}`);
 for (let i = 0; i < 4; ++i) {
   tickEvents.notifyAll(i);
 }
