@@ -16,11 +16,12 @@ const Class = require("@singleware/class");
 /**
  * Generic subject class.
  */
-let Subject = Subject_1 = class Subject {
+let Subject = Subject_1 = class Subject extends Class.Null {
     /**
      * Generic subject class.
      */
     constructor() {
+        super(...arguments);
         /**
          * List of observers.
          */

@@ -10,7 +10,7 @@ import { Observer } from './observer';
  * Generic subject class.
  */
 @Class.Describe()
-export class Subject<T> {
+export class Subject<T> extends Class.Null {
   /**
    * List of observers.
    */

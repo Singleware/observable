@@ -1,8 +1,13 @@
+/**
+ * Copyright (C) 2018 Silas B. Domingos
+ * This source code is licensed under the MIT License as described in the file LICENSE.
+ */
+import * as Class from '@singleware/class';
 import { Observer } from './observer';
 /**
  * Generic subject class.
  */
-export declare class Subject<T> {
+export declare class Subject<T> extends Class.Null {
     /**
      * List of observers.
      */

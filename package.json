@@ -7,28 +7,25 @@
   "name": "@singleware/observable",
   "description": "Singleware generic observable class.",
   "license": "MIT",
-  "version": "1.0.19",
+  "version": "1.0.21",
   "main": "release/source/index.js",
   "types": "release/types/index.d.ts",
   "keywords": [
-    "design pattern",
-    "observer",
-    "observable",
-    "subject",
-    "async"
+    "observable pattern",
+    "async observer"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/singleware/observable"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "dependencies": {
-    "@singleware/class": "^1.1.9"
+    "@singleware/class": "^1.1.14"
   },
   "devDependencies": {
-    "prettier": "^1.14.2",
+    "prettier": "^1.15.3",
     "typescript": "^2.9.2"
   },
   "prettier": {
